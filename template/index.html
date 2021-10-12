@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>C-cart Shopping</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+.dropbtn {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #1a1a1a;
+}
+.search {
+  width: 100%;
+  height:36px;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #1a1a1a;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+<div class="bgded overlay" style="background-image:url('{% static 'hm/images/demo/backgrounds/dd2.jpg'%}');height=50px;">
+  <div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">Quality Food Items</h3>
+      <p>Register with us and have quality food items at your door step.</p>
+<!--      <footer><a class="btn" href="/">As u whish</a></footer>-->
+      <center>
+         <form action="srch" method="get">
+        <div class="wrap">
+
+   <div class="search">
+
+      <input type="text" class="searchTerm" placeholder="What are you looking for?" name="q">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+
+   </div>
+</div>
+           </form>
+      </center>
+
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--<div class="wrapper row3">-->
+<!--  <main class="hoc container clear"> -->
+<!--    &lt;!&ndash; main body &ndash;&gt;-->
+<!--    &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--    &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--    <section class="group shout">-->
+
+<!--                    {% for i in pr %}-->
+
+<!--      <figure ><img src="{{i.img.url}}" alt="">-->
+<!--        <p>{{i.desc}}</p>-->
+<!--        <p>{{i.stock}}</p>-->
+<!--        <p><b>{{i.price}}</b></p>-->
+<!--        <figcaption class="heading"><a href="#">{{i.name}}</a></figcaption>-->
+<!--      </figure>-->
+<!--                    {% endfor %}-->
+
+<!--      <figure class="one_half"><img src="{% static 'hm/images/demo/546x356.png'%}" alt="">-->
+<!--        <figcaption class="heading"><a href="#">Scelerisque etiam</a></figcaption>-->
+<!--      </figure>-->
+<!--    </section>-->
+
+
+<!--    &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--    &lt;!&ndash; / main body &ndash;&gt;-->
+<!--    <div class="clear"></div>-->
+<!--  </main>-->
+<!--</div>-->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper gradient" id="more">
+  <div class="hoc container clear">
+    <!-- ################################################################################################ -->
+<!--    <div class="sectiontitle">-->
+<!--      <p class="nospace font-xs">Purus ut mi sed velit urna ut</p>-->
+<!--      <h6 class="heading font-x2">Sapien posuere in iaculis</h6>-->
+<!--      <div class="dropdown">-->
+<!--  <button class="dropbtn">Category</button>-->
+<!--  <div class="dropdown-content">-->
+<!--    <li><a href="/">All</a></li>-->
+<!--    {% for c in ct %}-->
+<!--<li><a href={{c.get_url}}>{{c.name}}</a></li>-->
+<!--              {% endfor %}-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--    </div>-->
+    <ul class="nospace group team">
+                    {% for i in pr %}
+
+      <li class="one_third">
+
+        <figure><a class="imgover" href={{i.get_url}}><img src="{{i.img.url}}" alt="" style="width:500px; height:300px;"></a>
+          <figcaption><strong>{{i.name}}</strong>
+            <p><b>{{i.price}}</b></p>
+<!--            <p>{{i.stock}}</p>-->
+            <em>{{i.desc|truncatechars:17}}</em></figcaption>
+        </figure>
+</br>
+      </li>
+                    {% endfor %}
+
+<!--      <li class="one_third">-->
+<!--        <figure><a class="imgover" href="#"><img src="{% static 'hm/images/demo/348x400.png'%}" alt=""></a>-->
+<!--          <figcaption><strong>B. Doe</strong> <em>Vel velit aliquam massa</em></figcaption>-->
+<!--        </figure>-->
+<!--      </li>-->
+<!--      <li class="one_third">-->
+<!--        <figure><a class="imgover" href="#"><img src="{% static 'hm/images/demo/348x400.png'%}" alt=""></a>-->
+<!--          <figcaption><strong>C. Doe</strong> <em>Vulputate aliquet purus</em></figcaption>-->
+<!--        </figure>-->
+<!--      </li>-->
+    </ul>
+    <center>
+<!--      {% for p in paginator.page_range %}-->
+<!--      <a href="?page={{p}}" class="btn btn-light btn-sm {% if p == pno %} active {% endif %}">{{p}}</a>-->
+<!--      {% endfor %}-->
+      <ul class="pagination">
+      {% for p in paginator.page_range %}
+      <li class="page-item {% if p == pno %} active {% endif %}">
+      <a class="page-link" href="?page={{p}}">{{p}}</a></li>
+    {% endfor %}
+        </ul>
+    </center>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-############################################################################################## -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2018 - shopping cart - </p>
+    <p class="fl_right">Designed by Demo</p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js'%}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js'%}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js'%}"></script>
+<!-- Homepage specific -->
+<script src="{% static 'layout/scripts/jquery.easypiechart.min.js'%}"></script>
+<!-- / Homepage specific -->
+
+</body>
+</html>
+{% endblock %}

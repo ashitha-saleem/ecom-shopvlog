@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>C-cart Shopping</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- ################################################################################################ -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+  <link href="{% static 'reg/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'reg/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'reg/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet">
+  <link href="{% static 'reg/css/flexslider.css' %}" rel="stylesheet">
+  <link href="{% static 'reg/css/templatemo-style.css' %}" rel="stylesheet">
+
+
+  <!-- ################################################################################################ -->
+
+<link href="{% static 'hm/layout/styles/layout.css'%}" rel="stylesheet" type="text/css" media="all">
+
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left">
+      <!-- ################################################################################################ -->
+      <h1 class="logoname"><a href="/">C<span>-</span>Cart  Shopping</a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+    <nav id="mainav" class="fl_right">
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="/">Home</a></li>
+
+
+
+
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+</div>
+
+
+	<section class="section-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Login</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- contact form -->
+								{% for msg in messages %}
+        <h3 style="color:red;">{{msg}}</h3>
+        {% endfor %}
+
+				<form action="#" method="post" enctype="multipart/form-data" class="tm-contact-form">
+					{% csrf_token %}
+					<div class="col-lg-6 col-md-6 tm-contact-form-input">
+						<div class="form-group">
+							<input type="text" name="username" id="contact_name" class="form-control" placeholder="user name" />
+						</div>
+<!--						<div class="form-group">-->
+<!--							<textarea  name="desc" id="contact_message" class="form-control" placeholder="Description" ></textarea>-->
+<!--						</div>-->
+						<div class="form-group">
+							<input type="password" name="password" id="contact_subject" class="form-control" placeholder="Pssword" />
+						</div>
+<!--						<div class="form-group">-->
+<!--							<input type="file" name="img" id="contact_subject" class="form-control" placeholder="Image" />-->
+<!--						</div>-->
+						<div class="form-group">
+							<button class="tm-submit-btn" type="submit" name="submit"><i style="color:black;">Login</i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+		<footer class="tm-black-bg">
+		  <div class="container">
+			  <div class="row">
+				  <p class="tm-copyright-text">Copyright &copy; 2084 Shopping Cart
+
+                  | Designed by demo</p>
+			   </div>
+		  </div>
+	    </footer>
+	  <script type="text/javascript" src="reg/js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
+	  <script type="text/javascript" src="reg/js/bootstrap.min.js"></script>					<!-- bootstrap js -->
+	  <script type="text/javascript" src="reg/js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
+	  <script type="text/javascript" src="reg/js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
+
+
+
+<!--<form method="post"  enctype="multipart/form-data">-->
+<!--  {% csrf_token %}-->
+<!--  <input type="text" name="name" placeholder="product name"><br>-->
+<!--  <input type="text" name="desc" placeholder="desc"><br>-->
+<!--  <input type="text" name="price" placeholder="price"><br>-->
+<!--  <input type="file" name="img" placeholder="image"><br>-->
+<!--  <input type="submit" value="add"><br>-->
+
+<!--</form>-->
+  </body>
+</html>

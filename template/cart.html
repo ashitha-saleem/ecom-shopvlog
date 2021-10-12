@@ -1,0 +1,233 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>Shopping Cart</title>-->
+
+<!--    <link rel="stylesheet" href="{% static 'crt/style.css' %}" media="screen" title="no title" charset="utf-8">-->
+<!--    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>-->
+<!--    <meta name="robots" content="noindex,follow" />-->
+<!--  </head>-->
+<!--  <body>-->
+
+<!--    <div class="shopping-cart">-->
+<!--      &lt;!&ndash; Title &ndash;&gt;-->
+<!--      <div class="title">-->
+<!--        Shopping Bag-->
+<!--      </div>-->
+<!--{% for i in ci %}-->
+<!--      &lt;!&ndash; Product #1 &ndash;&gt;-->
+<!--      <div class="item">-->
+<!--        <div class="buttons">-->
+<!--          <span class="delete-btn"></span>-->
+<!--          <span class="like-btn"></span>-->
+<!--        </div>-->
+
+<!--        <div class="image">-->
+<!--          <img src="{{i.prodt.img.url}}" style="height:30px;width=30px;" alt="{{i.prodt.name}}"/>-->
+<!--        </div>-->
+
+<!--        <div class="description">-->
+<!--          <span>ID:{{i.prodt.id}}</span>-->
+<!--          <span>price:{{i.prodt.price}}</span>-->
+<!--          <span>White</span>-->
+<!--        </div>-->
+
+<!--        <div class="quantity">-->
+<!--          <button class="plus-btn" type="button" name="button">-->
+<!--            <img src="{% static 'crt/plus.svg' %}" alt="" />-->
+<!--          </button>-->
+<!--          <input type="text" name="name" value="1">-->
+<!--          <button class="minus-btn" type="button" name="button">-->
+<!--            <img src="{% static 'crt/minus.svg' %}" alt="" />-->
+<!--          </button>-->
+<!--        </div>-->
+
+<!--        <div class="total-price">$549</div>-->
+<!--      </div>-->
+<!--      {% endfor %}-->
+
+<!--&lt;!&ndash;      &lt;!&ndash; Product #2 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="buttons">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="delete-btn"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="like-btn"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="image">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img src="item-2.png" alt=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="description">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Maison Margiela</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Future Sneakers</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>White</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="quantity">&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="plus-btn" type="button" name="button">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="{% static 'crt/plus.svg' %}" alt="" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;          <input type="text" name="name" value="1">&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="{% static 'crt/minus-btn" type="button" name="button">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="minus.svg" alt="" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="total-price">$870</div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      &lt;!&ndash; Product #3 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="buttons">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="delete-btn"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="like-btn"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="image">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img src="item-3.png" alt="" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="description">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Our Legacy</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Brushed Scarf</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Brown</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="quantity">&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="plus-btn" type="button" name="button">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="plus.svg" alt="" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;          <input type="text" name="name" value="1">&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="minus-btn" type="button" name="button">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="minus.svg" alt="" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="total-price">$349</div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <script type="text/javascript">-->
+<!--      $('.minus-btn').on('click', function(e) {-->
+<!--    		e.preventDefault();-->
+<!--    		var $this = $(this);-->
+<!--    		var $input = $this.closest('div').find('input');-->
+<!--    		var value = parseInt($input.val());-->
+
+<!--    		if (value > 1) {-->
+<!--    			value = value - 1;-->
+<!--    		} else {-->
+<!--    			value = 0;-->
+<!--    		}-->
+
+<!--        $input.val(value);-->
+
+<!--    	});-->
+
+<!--    	$('.plus-btn').on('click', function(e) {-->
+<!--    		e.preventDefault();-->
+<!--    		var $this = $(this);-->
+<!--    		var $input = $this.closest('div').find('input');-->
+<!--    		var value = parseInt($input.val());-->
+
+<!--    		if (value < 100) {-->
+<!--      		value = value + 1;-->
+<!--    		} else {-->
+<!--    			value =100;-->
+<!--    		}-->
+
+<!--    		$input.val(value);-->
+<!--    	});-->
+
+<!--      $('.like-btn').on('click', function() {-->
+<!--        $(this).toggleClass('is-active');-->
+<!--      });-->
+<!--    </script>-->
+<!--  </body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+
+
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2><center>Cart List</center></h2>
+<div> <h3><b><a href="/">Home<a/></b></h3></div>
+<div class="row">
+<!--  <div class="col-75">-->
+<!--    <div class="container">-->
+
+<!--    </div>-->
+<!--  </div>-->
+  <div class="col-25">
+    <div class="container">
+
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{cn}}</b></span></h4>
+{% if ci != None %}
+                    {% for i in ci %}
+
+
+          <a href="{{i.prodt.get_url}}"><img src="{{i.prodt.img.url}}" style="height:70px;width=70px;" alt="{{i.prodt.name}}"/></a>&nbsp;&nbsp;&nbsp;<span>Rs:{{i.prodt.price}}</span>
+        &nbsp;&nbsp;&nbsp;<span>Quan:&nbsp;<a href="{% url 'addcrt' i.prodt.id %}"><i class="fa fa-plus" style="font-size:17px;"></i></a>&nbsp{{i.quan}}&nbsp<a href="{% url 'cartMin' i.prodt.id %}"><i class="fa fa-minus" style="font-size:17px;"></i></a></span><span class="price"><a href="{% url 'remove' i.prodt.id %}"><i class="fa fa-trash" style="font-size:20px;"></i></span></p>
+
+      <p><a href="{{i.prodt.get_url}}">{{i.prodt.name}}</a>  <span class="price">{{i.total}}</span></p>
+      <hr>
+            {% endfor %}
+{% endif %}
+
+
+            <p>Total <span class="price" style="color:black"><b>{{t}}</b></span></p>
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
